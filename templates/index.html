@@ -3,7 +3,7 @@
   <head>
     <title>Free Tamil Ebooks - Send to Kindle</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css"> 
     <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
@@ -24,13 +24,29 @@
     <meta name="msapplication-TileImage" content="https://i0.wp.com/freetamilebooks.com/wp-content/uploads/2014/12/cropped-FTE-logo.jpg?fit=270%2C270" />
   </head>
   <body>
-    <header>SENT TO KINDLE</header>
+    <header>Send To Kindle</header>
     <form id="upload-form" class="topBefore" action="" method=post enctype=multipart/form-data>    
       <input name="file_url" id="file_url" type="hidden">
       <input name="file_name" id="file_name" type="hidden">
-      <input name="email" type="email" placeholder="your_email@kindle.com" required>
-      <input name="submit" id="submit" type="submit" value="GO!" style="background-color: aqua;">
+      <input name="email" type="email" placeholder="your_kindle_email@kindle.com" required>
+      <input name="submit" id="submit" type="submit" value="GO!"">
+
     </form>
+
+<hr>
+<div id="intro_text">
+<h2>
+To add an approved email address:
+</h2>
+<br/>
+
+<p>    Go to <a href="https://www.amazon.com/mycd"  target="_blank">Manage Your Content and Devices</a></p>
+<p>    From Settings, scroll down to Personal Document Settings.</p>
+<p>    Under Approved Personal Document E-mail List, check if your email address is listed. If your email address is not listed, select Add a new approved e-mail address.</p>
+<p>    Enter the email address as <b>freetamilebooksteam@gmail.com</b> and click Add Address.</p>
+
+</div>
+
   </body>
 </html>
 <script type="text/javascript">

@@ -9,6 +9,9 @@ from flask import Flask, request, redirect, url_for, render_template, session
 from email.MIMEMultipart import MIMEMultipart
 from email.MIMEBase import MIMEBase
 from email import encoders
+import time
+import datetime
+
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
@@ -37,6 +40,11 @@ def submit():
 
 def mailer(email, file_url, file_name):
     """Function that downloads and emails the file."""
+
+    ts = time.time()
+    timestamp = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d-%H-%M-%S')
+
+
     fromaddr = "your_email"
     toaddr = email
     password = "your_password"
@@ -62,6 +70,10 @@ def mailer(email, file_url, file_name):
     server.sendmail(fromaddr, toaddr, text)
     server.quit()
 
+    log = open("logs/log.csv", "a")
+    log_content = timestamp +"," + email + "," + file_url +"," + file_name + "\n"
+    log.write(log_content)
+    log.close()
 
 if __name__ == "__main__":
     parser = OptionParser()
