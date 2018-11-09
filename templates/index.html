@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../static/css/style.css"> 
     <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
+ <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
@@ -40,17 +41,21 @@ To add an approved email address:
 </h2>
 <br/>
 
-<p>    Go to <a href="https://www.amazon.com/mycd"  target="_blank">Manage Your Content and Devices</a></p>
+<p>    Go to <a href="https://www.amazon.in/mycd"  target="_blank">Manage Your Content and Devices</a></p>
 <p>    From Settings, scroll down to Personal Document Settings.</p>
 <p>    Under Approved Personal Document E-mail List, check if your email address is listed. If your email address is not listed, select Add a new approved e-mail address.</p>
 <p>    Enter the email address as <b>freetamilebooksteam@gmail.com</b> and click Add Address.</p>
 
 </div>
 
+<div id="footer">
+      <p>Source <a href="https://github.com/Dineshkarthik/Send2Kindle" target="_blank"><i class="fa fa-github"></i></a> View on GitHub</p>
+    </div>
   </body>
 </html>
 <script type="text/javascript">
   var searchParams = new URLSearchParams(window.location.search);
+document.getElementsByTagName('header')[0].innerHTML = 'Send <strong>' +  searchParams.get('filename') + '</strong> to your kindle account';
   $("#file_url").val(searchParams.get("fileurl"));
   $("#file_name").val(searchParams.get("filename"));
   jQuery.validator.addMethod("email", function(value, element) {

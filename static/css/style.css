@@ -52,3 +52,9 @@ input {
   margin-left: 300px;
   text-align: left;
 }
+
+
+#footer p{
+  text-align: right;
+  margin-right: 10px;
+}
