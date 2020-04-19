@@ -30,7 +30,8 @@ def index():
         email = request.form['email']
         file_url = request.form['file_url']
         file_name = request.form['file_name']
-        mailer(email, file_url, file_name)
+        encodedUrl = u'file_url'.encode('utf-8')
+        mailer(email, encodedUrl, file_name)
         session["data"] = email
         return redirect(url_for('submit'))
     return render_template('index.html')
@@ -56,7 +57,6 @@ def mailer(email, file_url, file_name):
     msg["Subject"] = "Ebook from FreeTamilEbooks.com"
     msg['From'] = fromaddr
     msg['To'] = toaddr
-#    msg['cc'] = "tshrinivasan@gmail.com"
     part = MIMEBase('application', 'octet-stream')
     parsed_uri = urlparse(file_url)
     if parsed_uri.hostname == 'freetamilebooks.com':
@@ -68,17 +68,9 @@ def mailer(email, file_url, file_name):
                 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11'
             })
 
-#    file_name = file_name.encode('utf-8')
-
-#    file_name = "/tmp/" + timestamp + "-" + file_name
-#    print file_name
-#    os.system(" wget -O " + file_name + "   "  + file_url)
-
         part.set_payload(urllib.request.urlopen(req).read())
-#    part.set_payload(open(file_name).read())
         encoders.encode_base64(part)
         part.add_header('Content-Disposition',
-                        #                    "attachment; filename= %s" % os.path.basename(file_name))
                         "attachment; filename= %s" % file_name)
         msg.attach(part)
         server = smtplib.SMTP('smtp.gmail.com', 587)
