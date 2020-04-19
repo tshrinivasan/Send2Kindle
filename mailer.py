@@ -47,8 +47,7 @@ def mailer(email, file_url, file_name):
     """Function that downloads and emails the file."""
 
     ts = time.time()
-    timestamp = datetime.datetime.fromtimestamp(
-        ts).strftime('%Y-%m-%d-%H-%M-%S')
+    timestamp = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d-%H-%M-%S')
 
     fromaddr = "freetamilebooksteam@gmail.com"
     toaddr = email
@@ -70,8 +69,7 @@ def mailer(email, file_url, file_name):
 
         part.set_payload(urllib.request.urlopen(req).read())
         encoders.encode_base64(part)
-        part.add_header('Content-Disposition',
-                        "attachment; filename= %s" % file_name)
+        part.add_header('Content-Disposition', "attachment; filename= %s" % file_name)
         msg.attach(part)
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.ehlo()
@@ -97,4 +95,4 @@ if __name__ == "__main__":
         help="Port on which the app will run",
         default=5000)
     (options, args) = parser.parse_args()
-    app.run(host='herokuapp.com', debug=True, port=int(options.port))
+    app.run(host='0.0.0.0', debug=False, port=int(options.port))
