@@ -1,1 +1,1 @@
-worker: python mailer.py -p 8000
+web: gunicorn app:app
