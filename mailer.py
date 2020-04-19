@@ -97,4 +97,4 @@ if __name__ == "__main__":
         help="Port on which the app will run",
         default=5000)
     (options, args) = parser.parse_args()
-    app.run(host='0.0.0.0', debug=True, port=int(options.port))
+    app.run(host='send2kindle.herokuapp.com', debug=True, port=int(options.port))
