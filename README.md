@@ -37,8 +37,7 @@ $ python mailer.py
  - URL should have 2 parameters
 	 - fileurl - Url of the file to be mailed.
 	 - filename - Name of the file to be mailed.
-	 - ex: http://localhost:5000/?fileurl=http://freetamilebooks.com/download/%e0%ae%89%e0%ae%b2%e0%ae%95-%e0%ae%b5%e0%ae%b0%e0%ae%b2%e0%ae%be%e0%ae%b1%e0%af%8d%e0%ae%b1%e0%ae%bf%e0%ae%b2%e0%af%8d-%e0%ae%b5%e0%ae%bf%e0%ae%9f%e0%af%81%e0%ae%a4%e0%ae%b2%e0%af%88-%e0%ae%b5-2/
-	 https://35.166.185.40/send2kindle?fileurl=http://freetamilebooks.com/download/%e0%ae%89%e0%ae%b2%e0%ae%95-%e0%ae%b5%e0%ae%b0%e0%ae%b2%e0%ae%be%e0%ae%b1%e0%af%8d%e0%ae%b1%e0%ae%bf%e0%ae%b2%e0%af%8d-%e0%ae%b5%e0%ae%bf%e0%ae%9f%e0%af%81%e0%ae%a4%e0%ae%b2%e0%af%88-%e0%ae%b5-2/&filename=ulaga_varalatril_viduthalai_veerargal.mobi
+	 - ex: https://35.166.185.40/send2kindle?fileurl=http://freetamilebooks.com/download/%e0%ae%89%e0%ae%b2%e0%ae%95-%e0%ae%b5%e0%ae%b0%e0%ae%b2%e0%ae%be%e0%ae%b1%e0%af%8d%e0%ae%b1%e0%ae%bf%e0%ae%b2%e0%af%8d-%e0%ae%b5%e0%ae%bf%e0%ae%9f%e0%af%81%e0%ae%a4%e0%ae%b2%e0%af%88-%e0%ae%b5-2/&filename=ulaga_varalatril_viduthalai_veerargal.mobi
 License
 ----
 

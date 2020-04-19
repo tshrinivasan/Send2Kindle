@@ -1,0 +1,1 @@
+worker: python mailer.py -p 8000
