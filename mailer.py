@@ -3,8 +3,8 @@
 import hashlib
 import os
 import smtplib
-import urllib.request
-from urllib.parse import urlparse
+import requests
+from urllib.parse import urlparse, unquote
 import argparse
 from flask import Flask, request, redirect, url_for, render_template, session
 from email.mime.multipart import MIMEMultipart
@@ -55,13 +55,13 @@ def mailer(email, file_url, file_name):
     parsed_uri = urlparse(file_url)
     
     if parsed_uri.hostname == 'freetamilebooks.com':
-        req = urllib.request.Request(
-            file_url,
-            headers={
-                'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11'
-            })
-        
-        part.set_payload(urllib.request.urlopen(req).read())
+        file_url = unquote(file_url)
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11'
+        }
+        response = requests.get(file_url, headers=headers)
+        response.raise_for_status()  # Raise an error for bad responses
+        part.set_payload(response.content)
         encoders.encode_base64(part)
         part.add_header('Content-Disposition', f"attachment; filename= {file_name}")
         msg.attach(part)
